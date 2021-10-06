@@ -1,0 +1,79 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    // For React Propjects
+    "plugin:react/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "root": true,
+  "rules": {
+    "eol-last": "error",
+    "indent": [
+      "error",
+      2
+    ],
+    "semi": "warn",
+    "no-console": "warn",
+    "max-len": [
+      "warn",
+      {
+        "code": 120
+      }
+    ],
+    "object-curly-spacing": [
+      "warn",
+      "always"
+    ],
+    "quotes": [
+      "warn",
+      "double",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    // For React Propjects
+    "react/prop-types": "off",
+    "react/jsx-curly-spacing": [
+      "warn",
+      {
+        "allowMultiline": true,
+        "children": {
+          "when": "always"
+        },
+        "spacing": {
+          "objectLiterals": "always"
+        },
+        "when": "always"
+      }
+    ],
+    "react/jsx-indent": [
+      "error",
+      2,
+      {
+        "checkAttributes": true,
+        "indentLogicalExpressions": true
+      }
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      2
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
