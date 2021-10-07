@@ -2,6 +2,13 @@
   list-style: none;
   padding: 0;
   margin: 0 0 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 0 10px 0 var(--primary-light-bg-color);
 }
 
 .card:last-of-type {
@@ -14,8 +21,6 @@
   grid-template-columns: 1fr 2fr;
   color: var(--primary-light-color);
   background-color: var(--secondary-dark-bg-color);
-  border-radius: 10px;
-  overflow: hidden;
 }
 
 .image {
