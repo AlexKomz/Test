@@ -6,6 +6,13 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
+
+  transform: translateX(-100%);
+  transition: transform 0.25s;
+}
+
+.opened {
+  transform: translateX(0);
 }
 
 .input {

@@ -1,11 +1,15 @@
 import React from "react";
 import styles from "./Filters.module.css";
-import Button from "../../UI/Button/Button";
-import Input from "../../UI/Input/Input";
+import Button from "../UI/Button/Button";
+import Input from "../UI/Input/Input";
 
-const Filters = () => {
+const Filters = ({ opened }) => {
+  const classes = [styles.filters];
+
+  if (opened) classes.push(styles.opened);
+
   return (
-    <div className={ styles.filters }>
+    <div className={ classes.join(` `) }>
       <Input className={ styles.input } label={ `Name` }/>
       <Input className={ styles.input } label={ `Status` }/>
       <Input className={ styles.input } label={ `Species` }/>

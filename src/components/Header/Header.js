@@ -1,13 +1,17 @@
-import React from "react";
-import Button from "../../UI/Button/Button";
+import React, { useState } from "react";
+import Button from "../UI/Button/Button";
 import styles from "./Header.module.css";
 import Filters from "../Filters/Filters";
 
-const Header = ({ title }) => (
-  <header className={ styles.header }>
-    <Button size={ `large` }>{ title }</Button>
-    <Filters/>
-  </header>
-);
+const Header = ({ title }) => {
+  const [opened, setOpened] = useState(false);
+
+  return (
+    <header className={ styles.header }>
+      <Button onClick={ () => setOpened(prev => !prev) } size={ `large` }>{ title }</Button>
+      <Filters opened={ opened }/>
+    </header>
+  );
+};
 
 export default Header;

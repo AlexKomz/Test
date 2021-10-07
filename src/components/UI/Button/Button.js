@@ -3,6 +3,7 @@ import styles from "./Button.module.css";
 
 const Button = ({
   children,
+  onClick,
   className = ``,
   type = `button`,
   size = `default`,
@@ -13,7 +14,7 @@ const Button = ({
   if (className) classes.push(className);
 
   return (
-    <button className={ classes.join(` `) } type={ type }>
+    <button className={ classes.join(` `) } onClick={ onClick } type={ type }>
       { children }
     </button>
   );
