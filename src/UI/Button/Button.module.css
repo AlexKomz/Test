@@ -1,0 +1,65 @@
+.button {
+  background: none;
+  border: none;
+  outline: none;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.small {
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+
+.default {
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+.large {
+  padding: 10px 16px;
+  border-radius: 15px;
+  font-size: 1.2em;
+}
+
+.transparent {
+  background-color: transparent;
+  color: var(--primary-dark-color);
+}
+
+.transparent:hover, .transparent:focus {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.transparent:active {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.dark {
+  background-color: var(--secondary-dark-bg-color);
+  color: var(--primary-light-color);
+}
+
+.dark:hover, .dark:focus {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dark:active {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.light {
+  background-color: var(--primary-light-bg-color);
+  color: var(--primary-dark-color);
+}
+
+.light:hover, .light:focus {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.light:active {
+  background-color: rgba(255, 255, 255, 0.5);
+}

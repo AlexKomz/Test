@@ -1,0 +1,7 @@
+.header {
+  min-height: 50px;
+  display: flex;
+  justify-items: center;
+  background-color: var(--primary-light-bg-color);
+  position: relative;
+}

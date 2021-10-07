@@ -1,0 +1,23 @@
+.status {
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.status:before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: gainsboro;
+}
+
+.alive:before {
+  background-color: greenyellow;
+}
+
+.dead:before {
+  background-color: red;
+}

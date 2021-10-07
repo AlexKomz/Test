@@ -1,0 +1,19 @@
+.filters {
+  min-width: 200px;
+  background-color: var(--primary-light-bg-color);
+  position: absolute;
+  top: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin-bottom: 5px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

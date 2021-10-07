@@ -1,0 +1,12 @@
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.input label {
+  font-size: 1.1em;
+}
+
+.input input {
+  box-sizing: border-box;
+}
