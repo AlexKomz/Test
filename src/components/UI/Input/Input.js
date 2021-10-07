@@ -1,7 +1,14 @@
 import React from "react";
 import styles from "./Input.module.css";
 
-const Input = ({ className = ``, label=``, type=`text` }) => {
+const Input = ({
+  index,
+  onChange,
+  className = ``,
+  label=``,
+  value=``,
+  type=`text`
+}) => {
   const generatedId = Math.random().toString();
 
   const classes = [styles.input];
@@ -11,7 +18,12 @@ const Input = ({ className = ``, label=``, type=`text` }) => {
   return (
     <div className={ classes.join(` `) }>
       <label htmlFor={ generatedId }>{ label }</label>
-      <input id={ generatedId } type={ type }/>
+      <input
+        id={ generatedId }
+        onChange={ event => onChange(event.target.value, index) }
+        type={ type }
+        value={ value }
+      />
     </div>
   );
 };
