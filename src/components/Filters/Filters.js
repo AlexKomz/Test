@@ -13,7 +13,7 @@ const Filters = ({ opened, toggleFilterHandler }) => {
     { label: `Gender`, value: `` }
   ]);
 
-  const { loadData, setQuery } = useContext(Context);
+  const { loadData, setPage, setQuery } = useContext(Context);
 
   const classes = [styles.filters];
 
@@ -27,14 +27,19 @@ const Filters = ({ opened, toggleFilterHandler }) => {
     setFilters(newFilters);
   };
 
+  const buttonAction = (query) => {
+    setPage(1);
+    setQuery(query);
+    loadData({ page: 1, query });
+
+    toggleFilterHandler();
+  };
+
   const resetHandler = () => {
     const newFilters = [...filters].map(filter => ({ ...filter, value: `` }));
     setFilters(newFilters);
 
-    setQuery(``);
-    loadData({ query: `` });
-
-    toggleFilterHandler();
+    buttonAction(``);
   };
 
   const submitHandler = () => {
@@ -42,14 +47,11 @@ const Filters = ({ opened, toggleFilterHandler }) => {
       .map(filter => `${filter.label.toLowerCase()}=${filter.value.toLowerCase()}`)
       .join(`&`);
 
-    setQuery(query);
-    loadData({ query });
-
-    toggleFilterHandler();
+    buttonAction(query);
   };
 
   return (
-    <div className={ classes.join(` `) }>
+    <form className={ classes.join(` `) } onSubmit={ event => event.preventDefault() }>
       {
         filters.map((filter, index) => (
           <Input
@@ -57,14 +59,15 @@ const Filters = ({ opened, toggleFilterHandler }) => {
             index={ index }
             className={ styles.input }
             onChange={ filterChangeHandler }
-            { ...filter }/>
+            { ...filter }
+          />
         ))
       }
       <div className={ styles.wrapper }>
-        <Button onClick={ submitHandler } theme={ `dark` }>Filter</Button>
+        <Button onClick={ submitHandler } theme={ `dark` } type={ `submit` }>Filter</Button>
         <Button onClick={ resetHandler }>Reset</Button>
       </div>
-    </div>
+    </form>
   );
 };
 
