@@ -19,10 +19,12 @@ const Main = () => {
         loading
           ? <Loader/>
           : characters.length
-            ? <>
-              <Cards characters={ characters }/>
-              <Pages count={ pages } current={ page }/>
-            </>
+            ? (
+              <>
+                <Cards characters={ characters }/>
+                <Pages count={ pages } current={ page }/>
+              </>
+            )
             : <Nothing/>
       }
     </main>
