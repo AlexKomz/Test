@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Filters.module.css";
 import Button from "../UI/Button/Button";
 import Input from "../UI/Input/Input";
+import { Context } from "../../state/context";
 
-const Filters = ({ opened }) => {
+const Filters = ({ opened, toggleFilterHandler }) => {
   const [filters, setFilters] = useState([
     { label: `Name`, value: `` },
     { label: `Status`, value: `` },
     { label: `Species`, value: `` },
     { label: `Type`, value: `` },
-    { label: `Gender`, value: `` },
-    { label: `Origin`, value: `` },
-    { label: `Location`, value: `` }
+    { label: `Gender`, value: `` }
   ]);
+
+  const { loadData, setQuery } = useContext(Context);
 
   const classes = [styles.filters];
 
@@ -29,6 +30,22 @@ const Filters = ({ opened }) => {
   const resetHandler = () => {
     const newFilters = [...filters].map(filter => ({ ...filter, value: `` }));
     setFilters(newFilters);
+
+    setQuery(``);
+    loadData({ query: `` });
+
+    toggleFilterHandler();
+  };
+
+  const submitHandler = () => {
+    const query = `&` + filters
+      .map(filter => `${filter.label.toLowerCase()}=${filter.value.toLowerCase()}`)
+      .join(`&`);
+
+    setQuery(query);
+    loadData({ query });
+
+    toggleFilterHandler();
   };
 
   return (
@@ -44,7 +61,7 @@ const Filters = ({ opened }) => {
         ))
       }
       <div className={ styles.wrapper }>
-        <Button theme={ `dark` }>Filter</Button>
+        <Button onClick={ submitHandler } theme={ `dark` }>Filter</Button>
         <Button onClick={ resetHandler }>Reset</Button>
       </div>
     </div>

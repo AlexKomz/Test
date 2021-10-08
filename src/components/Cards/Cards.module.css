@@ -1,0 +1,21 @@
+.cards {
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: auto auto auto;
+}
+
+@media (max-width: 1840px) {
+  .cards {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 1240px) {
+  .cards {
+    grid-template-columns: auto;
+    padding: 20px;
+  }
+}

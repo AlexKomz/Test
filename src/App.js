@@ -2,15 +2,15 @@ import React from "react";
 import Layout from "./containers/Layout/Layout";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
-import { ApiState } from "./context/api/apiState";
+import { State } from "./state/state";
 
 const App = ({}) => {
   return (
     <Layout>
-      <ApiState>
+      <State>
         <Header title={ `Filters` }/>
         <Main/>
-      </ApiState>
+      </State>
     </Layout>
   );
 };

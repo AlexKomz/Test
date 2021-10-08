@@ -1,14 +1,16 @@
 import React, { useContext, useEffect } from "react";
 import styles from "./Main.module.css";
-import Card from "../Card/Card";
-import { ApiContext } from "../../context/api/apiContext";
+import { Context } from "../../state/context";
 import Loader from "../UI/Loader/Loader";
+import Pages from "../Pages/Pages";
+import Cards from "../Cards/Cards";
+import Nothing from "../Nothing/Nothing";
 
 const Main = () => {
-  const { loading, getData, characters } = useContext(ApiContext);
+  const { loading, loadData, characters, pages, page } = useContext(Context);
 
   useEffect(() => {
-    getData();
+    loadData();
   }, []);
 
   return (
@@ -16,15 +18,12 @@ const Main = () => {
       {
         loading
           ? <Loader/>
-          : <ul>
-            {
-              characters.map(
-                character => (
-                  <Card key={ character.id } character={ character }/>
-                )
-              )
-            }
-          </ul>
+          : characters.length
+            ? <>
+              <Cards characters={ characters }/>
+              <Pages count={ pages } current={ page }/>
+            </>
+            : <Nothing/>
       }
     </main>
   );
