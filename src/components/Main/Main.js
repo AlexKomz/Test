@@ -5,9 +5,10 @@ import Loader from "../UI/Loader/Loader";
 import Pages from "../Pages/Pages";
 import Cards from "../Cards/Cards";
 import Nothing from "../Nothing/Nothing";
+import Popup from "../Popup/Popup";
 
 const Main = () => {
-  const { loading, loadData, characters, pages, page } = useContext(Context);
+  const { loading, loadData, characters, character, pages, page } = useContext(Context);
 
   useEffect(() => {
     loadData();
@@ -21,6 +22,7 @@ const Main = () => {
           : characters.length
             ? (
               <>
+                { character && <Popup character={ character }/> }
                 <Cards characters={ characters }/>
                 <Pages count={ pages } current={ page }/>
               </>
