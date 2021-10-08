@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./Card.module.css";
-import Status from "./Status/Status";
-import Paragraph from "./Paragraph/Paragraph";
+import Status from "../../Status/Status";
+import Paragraph from "../../Paragraph/Paragraph";
 import { Context } from "../../../state/context";
 
 const Card = ({ character }) => {
@@ -25,7 +25,7 @@ const Card = ({ character }) => {
             <Status status={ status } species={ species }/>
           </div>
           <Paragraph title={ `Type:` } text={ type
-            ? character.type
+            ? type
             : `unknown` }/>
           <Paragraph title={ `Gender:` } text={ gender }/>
         </div>
