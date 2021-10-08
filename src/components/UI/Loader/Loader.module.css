@@ -33,9 +33,3 @@
     opacity: 0;
   }
 }
-
-.container {
-  position: absolute;
-  left: calc(50% - 40px);
-  top: calc(50% - 40px);
-}

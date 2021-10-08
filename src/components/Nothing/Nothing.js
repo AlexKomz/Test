@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./Nothing.module.css";
+import Center from "../../containers/Center/Center";
 
 const Nothing = () => (
-  <div className={ styles.nothing }>
-    Nothing here...
-  </div>
+  <Center>
+    <div className={ styles.nothing }>
+      Nothing here...
+    </div>
+  </Center>
 );
 
 export default Nothing;
