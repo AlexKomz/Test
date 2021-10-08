@@ -55,7 +55,7 @@ const Popup = ({ character }) => {
               <Paragraph theme={ `light` } title={ `Origin:` } text={ origin.name }/>
               <Paragraph theme={ `light` } title={ `Location:` } text={ location.name }/>
               <Paragraph theme={ `light` } title={ `Episodes:` } text={ formattedEpisodes.join(`, `) }/>
-              <Paragraph theme={ `light` } title={ `Created:` } text={ created }/>
+              <Paragraph theme={ `light` } title={ `Created:` } text={ new Date(created).toLocaleDateString() }/>
             </div>
           </div>
         </article>
