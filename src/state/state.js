@@ -6,7 +6,7 @@ import { Context } from "./context";
 
 const init = () => ({
   characters: [],
-  character: {},
+  character: null,
   pages: 0,
   page: 1,
   query: ``,
