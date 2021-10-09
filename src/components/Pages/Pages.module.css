@@ -14,8 +14,17 @@
 
   opacity: .25;
   transition: opacity .25s;
+
+  list-style: none;
 }
 
 .pages:hover {
   opacity: 1;
+}
+
+.gap {
+  align-self: flex-end;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: var(--secondary-dark-bg-color);
 }
