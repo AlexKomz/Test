@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./Input.module.css";
+import { EMPTY_VALUE, InputType } from "../../../constants";
 
 const Input = ({
   index,
   onChange,
-  className = ``,
-  label=``,
-  value=``,
-  type=`text`
+  className = EMPTY_VALUE,
+  label = EMPTY_VALUE,
+  value = EMPTY_VALUE,
+  type = InputType.TEXT
 }) => {
   const generatedId = Math.random().toString();
 

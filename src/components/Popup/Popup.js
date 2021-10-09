@@ -4,6 +4,7 @@ import Paragraph from "../Paragraph/Paragraph";
 import Status from "../Status/Status";
 import Button from "../UI/Button/Button";
 import { Context } from "../../state/context";
+import { Label, Theme, UNKNOWN_VALUE } from "../../constants";
 
 const Popup = ({ character }) => {
   const { setCharacter } = useContext(Context);
@@ -36,7 +37,7 @@ const Popup = ({ character }) => {
         <Button
           className={ styles.close }
           onClick={ closePopupHandler }
-          theme={ `dark` }
+          theme={ Theme.DARK }
         >
           X
         </Button>
@@ -48,14 +49,18 @@ const Popup = ({ character }) => {
           <div className={ styles.wrapper }>
             <img src={ image } alt={ name }/>
             <div className={ styles.info }>
-              <Paragraph theme={ `light` } title={ `Type:` } text={ type
+              <Paragraph theme={ Theme.LIGHT } title={ `${Label.TYPE}:` } text={ type
                 ? type
-                : `unknown` }/>
-              <Paragraph theme={ `light` } title={ `Gender:` } text={ gender }/>
-              <Paragraph theme={ `light` } title={ `Origin:` } text={ origin.name }/>
-              <Paragraph theme={ `light` } title={ `Location:` } text={ location.name }/>
-              <Paragraph theme={ `light` } title={ `Episodes:` } text={ formattedEpisodes.join(`, `) }/>
-              <Paragraph theme={ `light` } title={ `Created:` } text={ new Date(created).toLocaleDateString() }/>
+                : UNKNOWN_VALUE }/>
+              <Paragraph theme={ Theme.LIGHT } title={ `${Label.GENDER}:` } text={ gender }/>
+              <Paragraph theme={ Theme.LIGHT } title={ `${Label.ORIGIN}:` } text={ origin.name }/>
+              <Paragraph theme={ Theme.LIGHT } title={ `${Label.LOCATION}:` } text={ location.name }/>
+              <Paragraph theme={ Theme.LIGHT } title={ `${Label.EPISODES}:` } text={ formattedEpisodes.join(`, `) }/>
+              <Paragraph
+                theme={ Theme.LIGHT }
+                title={ `${Label.CREATED}:` }
+                text={ new Date(created).toLocaleDateString() }
+              />
             </div>
           </div>
         </article>

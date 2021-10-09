@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./Page.module.css";
 import { Context } from "../../../state/context";
+import { ButtonType } from "../../../constants";
 
 const Page = ({ children, current }) => {
   const { loadData, setPage } = useContext(Context);
@@ -19,7 +20,7 @@ const Page = ({ children, current }) => {
   return (
     <li className={ styles.page }>
       <button
-        type={ `button` }
+        type={ ButtonType.BUTTON }
         className={ classes.join(` `) }
         onClick={ clickHandler }
       >

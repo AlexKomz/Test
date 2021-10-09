@@ -3,13 +3,14 @@ import { useReducer } from "react";
 import { ActionCreator, reducer } from "./reducer";
 import { api } from "../api";
 import { Context } from "./context";
+import { EMPTY_VALUE } from "../constants";
 
 const init = () => ({
   characters: [],
   character: null,
   pages: 0,
   page: 1,
-  query: ``,
+  query: EMPTY_VALUE,
   loading: false
 });
 

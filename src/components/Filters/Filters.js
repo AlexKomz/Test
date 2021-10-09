@@ -3,14 +3,20 @@ import styles from "./Filters.module.css";
 import Button from "../UI/Button/Button";
 import Input from "../UI/Input/Input";
 import { Context } from "../../state/context";
+import {
+  Label,
+  EMPTY_VALUE,
+  Theme,
+  ButtonType
+} from "../../constants";
 
 const Filters = ({ opened, toggleFilterHandler }) => {
   const [filters, setFilters] = useState([
-    { label: `Name`, value: `` },
-    { label: `Status`, value: `` },
-    { label: `Species`, value: `` },
-    { label: `Type`, value: `` },
-    { label: `Gender`, value: `` }
+    { label: Label.NAME, value: EMPTY_VALUE },
+    { label: Label.STATUS, value: EMPTY_VALUE },
+    { label: Label.SPECIES, value: EMPTY_VALUE },
+    { label: Label.TYPE, value: EMPTY_VALUE },
+    { label: Label.GENDER, value: EMPTY_VALUE }
   ]);
 
   const { loadData, setPage, setQuery } = useContext(Context);
@@ -64,7 +70,7 @@ const Filters = ({ opened, toggleFilterHandler }) => {
         ))
       }
       <div className={ styles.wrapper }>
-        <Button onClick={ submitHandler } theme={ `dark` } type={ `submit` }>Filter</Button>
+        <Button onClick={ submitHandler } theme={ Theme.DARK } type={ ButtonType.SUBMIT }>Filter</Button>
         <Button onClick={ resetHandler }>Reset</Button>
       </div>
     </form>

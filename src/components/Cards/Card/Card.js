@@ -3,6 +3,7 @@ import styles from "./Card.module.css";
 import Status from "../../Status/Status";
 import Paragraph from "../../Paragraph/Paragraph";
 import { Context } from "../../../state/context";
+import { Label, UNKNOWN_VALUE } from "../../../constants";
 
 const Card = ({ character }) => {
   const { setCharacter } = useContext(Context);
@@ -24,10 +25,10 @@ const Card = ({ character }) => {
             <h3>{ name }</h3>
             <Status status={ status } species={ species }/>
           </div>
-          <Paragraph title={ `Type:` } text={ type
+          <Paragraph title={ `${Label.TYPE}:` } text={ type
             ? type
-            : `unknown` }/>
-          <Paragraph title={ `Gender:` } text={ gender }/>
+            : UNKNOWN_VALUE }/>
+          <Paragraph title={ `${Label.GENDER}:` } text={ gender }/>
         </div>
       </article>
     </li>
