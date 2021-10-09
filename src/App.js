@@ -4,15 +4,13 @@ import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import { State } from "./state/state";
 
-const App = ({}) => {
-  return (
+const App = ({}) => (
+  <State>
     <Layout>
-      <State>
-        <Header title={ `Filters` }/>
-        <Main/>
-      </State>
+      <Header title={ `Filters` }/>
+      <Main/>
     </Layout>
-  );
-};
+  </State>
+);
 
 export default App;
